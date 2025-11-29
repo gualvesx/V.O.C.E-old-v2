@@ -1,0 +1,456 @@
+url,label
+# ===================== Rede Social =====================
+facebook.com,Rede Social
+instagram.com,Rede Social
+twitter.com,Rede Social
+x.com,Rede Social
+tiktok.com,Rede Social
+whatsapp.com,Rede Social
+web.whatsapp.com,Rede Social
+reddit.com,Rede Social
+snapchat.com,Rede Social
+discord.com,Rede Social
+pinterest.com,Rede Social
+br.pinterest.com,Rede Social
+linkedin.com,Rede Social
+tumblr.com,Rede Social
+weheartit.com,Rede Social
+bere.al,Rede Social
+vk.com,Rede Social
+flickr.com,Rede Social
+clubhouse.com,Rede Social
+quora.com,Rede Social
+pt.quora.com,Rede Social
+medium.com,Rede Social
+mastodon.social,Rede Social
+mix.com,Rede Social
+myspace.com,Rede Social
+parler.com,Rede Social
+truthsocial.com,Rede Social
+gab.com,Rede Social
+ok.ru,Rede Social
+telegram.org,Rede Social
+t.me,Rede Social
+threads.net,Rede Social
+nextdoor.com,Rede Social
+badoo.com,Rede Social
+tinder.com,Rede Social
+meetup.com,Rede Social
+tagged.com,Rede Social
+devianart.com,Rede Social
+ello.co,Rede Social
+aminoapps.com,Rede Social
+kwai.com,Rede Social
+messenger.com,Rede Social
+
+# ===================== IA (Inteligência Artificial) =====================
+chat.openai.com,IA
+anthropic.com,IA
+midjourney.com,IA
+perplexity.ai,IA
+claude.ai,IA
+gemini.google.com,IA
+poe.com,IA
+bard.google.com,IA
+pytorch.org,IA
+keras.io,IA
+deepmind.google,IA
+openai.com,IA
+firefly.adobe.com,IA
+huggingface.co,IA
+cohere.ai,IA
+stability.ai,IA
+replicate.com,IA
+runwayml.com,IA
+character.ai,IA
+notion.so,IA
+jasper.ai,IA
+copy.ai,IA
+writesonic.com,IA
+tabnine.com,IA
+mistral.ai,IA
+leonardo.ai,IA
+synthesia.io,IA
+elevenlabs.io,IA
+descript.com,IA
+gamma.app,IA
+tome.app,IA
+semantria.com,IA
+chat.deepseek.com,IA
+chatgpt.com,IA
+blackbox.ai,IA
+
+# ===================== Streaming ===================== 
+sbt.com.br,Streaming
+recordtv.r7.com,Streaming
+band.uol.com.br,Streaming
+cultura.uol.com.br,Streaming
+globoplay.globo.com,Streaming
+hbo.com,Streaming
+hbomax.com,Streaming
+fox.com,Streaming
+espn.com,Streaming
+discoverychannel.com,Streaming
+bbc.com,Streaming
+nbc.com,Streaming
+cbs.com,Streaming
+abc.com,Streaming
+sky.com,Streaming
+hulu.com,Streaming
+paramountplus.com,Streaming
+disneyplus.com,Streaming
+peacocktv.com,Streaming
+pluto.tv,Streaming
+starz.com,Streaming
+showtime.com,Streaming
+amc.com,Streaming
+tntdrama.com,Streaming
+appletv.com,Streaming
+twitch.tv,Streaming
+youtube.com,Streaming
+netflix.com,Streaming
+primevideo.com,Streaming
+max.com,Streaming
+discoveryplus.com,Streaming
+kick.com,Streaming
+skymais.com.br,Streaming
+tubitv.com,Streaming
+france.tv,Streaming
+filmelier.com,Streaming
+filmon.com,Streaming
+ustvgo.live,Streaming
+ustvgo.tv,Streaming
+worldstar.hiphop,Streaming
+raiplay.it,Streaming
+aovivo.radiomixfm.com.br,Streaming
+
+# ===================== Jogos ===================== 
+friv.com,Jogos
+poki.com,Jogos
+clickjogos.uol.com.br,Jogos
+miniclip.com,Jogos
+crazygames.com,Jogos
+roblox.com,Jogos
+minecraft.net,Jogos
+fortnite.com,Jogos
+store.epicgames.com,Jogos
+playstation.com,Jogos
+store.playstation.com,Jogos
+itch.io,Jogos
+xbox.com,Jogos
+enigmap.net,Jogos
+ascjogos.org.br,Jogos
+nintendo.com,Jogos
+rachacuca.com.br,Jogos
+my.games,Jogos
+riotgames.com,Jogos
+ea.com,Jogos
+easports.com,Jogos
+
+# ===================== Musica ===================== 
+spotify.com,Musica
+deezer.com,Musica
+music.apple.com,Musica
+music.youtube.com,Musica
+letras.mus.br,Musica
+soundcloud.com,Musica
+last.fm,Musica
+tidal.com,Musica
+radio.com,Musica
+pandora.com,Musica
+napster.com,Musica
+shazam.com,Musica
+genius.com,Musica
+musixmatch.com,Musica
+audiomack.com,Musica
+boomplay.com,Musica
+gaana.com,Musica
+joox.com,Musica
+wynk.in,Musica
+kkbox.com,Musica
+line.me/music,Musica
+idagio.com,Musica
+songkick.com,Musica
+bandsintown.com,Musica
+mixcloud.com,Musica
+cifraclub.com.br,Musica
+bandcamp.com,Musica
+reverbnation.com,Musica
+8tracks.com,Musica
+jamendo.com,Musica
+
+
+# ===================== Anime ===================== 
+mangaplus.shueisha.co.jp,Anime
+crunchyroll.com,Anime
+funimation.com,Anime
+viz.com,Anime
+webtoons.com,Anime
+comixology.com,Anime
+anime-planet.com,Anime
+myanimelist.net,Anime
+anilist.co,Anime
+kitsu.io,Anime
+animenewsnetwork.com,Anime
+mangamo.com,Anime
+bookwalker.jp,Anime
+rightstufanime.com,Anime
+sevenseasentertainment.com,Anime
+yenpress.com,Anime
+kodansha.us,Anime
+shonenjump.com,Anime
+square-enix-games.com/en_US/manga,Anime
+animate-Digitalshop.jp,Anime
+vertical-comics.com,Anime
+tapas.io,Anime
+lezhin.com,Anime
+toomics.com,Anime
+netcomics.com,Anime
+azuki.co,Anime
+global.manga-up.com,Anime
+animefire.plus,Anime
+animesDigital.cc,Anime
+mangalivre.net,Anime
+lermanga.org,Anime
+mangatoon.mobi,Anime
+goyabu.com,Anime
+betteranime.net,Anime
+animesvision.com.br,Anime
+animesfox.net,Anime
+unionmangas.top,Anime
+superanimes.biz,Anime
+animesroll.com,Anime
+onepiece-ex.com.br,Anime
+meusanimes.com,Anime
+animesone.biz,Anime
+mundoanimes.com,Anime
+animestc.net,Anime
+yakusoku.net,Anime
+mangasproject.net,Anime
+animesgratis.org,Anime
+otakuanime.com,Anime
+animelatinohd.com,Anime
+animeblix.com,Anime
+9anime.to,Anime
+gogoanime.pe,Anime
+
+
+
+
+
+# ===================== Governo =====================
+gov.br,Governo
+receita.fazenda.gov.br,Governo
+sp.gov.br,Governo
+detran.sp.gov.br,Governo
+senado.leg.br,Governo
+camara.leg.br,Governo
+planalto.gov.br,Governo
+stf.jus.br,Governo
+justica.gov.br,Governo
+al.gov.br,Governo
+mg.gov.br,Governo
+rj.gov.br,Governo
+pr.gov.br,Governo
+ba.gov.br,Governo
+rs.gov.br,Governo
+pe.gov.br,Governo
+sc.gov.br,Governo
+se.gov.br,Governo
+to.gov.br,Governo
+es.gov.br,Governo
+pa.gov.br,Governo
+rn.gov.br,Governo
+ro.gov.br,Governo
+ac.gov.br,Governo
+am.gov.br,Governo
+camara.sp.gov.br,Governo
+alesp.sp.gov.br,Governo
+tjsp.jus.br,Governo
+fazenda.sp.gov.br,Governo
+educacao.sp.gov.br,Governo
+saude.gov.br,Governo
+trabalho.gov.br,Governo
+economia.gov.br,Governo
+servicos.gov.br,Governo
+cidadania.gov.br,Governo
+defesa.gov.br,Governo
+enem.inep.gov.br,Governo
+vitrinetecnologica.mec.gov.br,Governo
+dados.gov.br,Governo
+portaldatransparencia.gov.br,Governo
+ibge.gov.br,Governo
+servicos.acesso.gov.br,Governo
+sso.acesso.gov.br,Governo
+servicos.sp.gov.br,Governo
+
+# ===================== Produtividade & Ferramentas =====================
+google.com,Produtividade & Ferramentas
+github.com,Produtividade & Ferramentas
+portaleduca.sesisp.org.br,Produtividade & Ferramentas
+pess.sesisenaispedu.org.br,Produtividade & Ferramentas
+sp.senai.br,Produtividade & Ferramentas
+sesisp.org.br,Produtividade & Ferramentas
+sites.google.com,Produtividade & Ferramentas
+colab.research.google.com,Produtividade & Ferramentas
+trello.com,Produtividade & Ferramentas
+slack.com,Produtividade & Ferramentas
+zoom.us,Produtividade & Ferramentas
+microsoft.com,Produtividade & Ferramentas
+office.com,Produtividade & Ferramentas
+teams.microsoft.com,Produtividade & Ferramentas
+outlook.live.com,Produtividade & Ferramentas
+tensorflow.org,Produtividade & Ferramentas
+onedrive.live.com,Produtividade & Ferramentas
+dropbox.com,Produtividade & Ferramentas
+www.mongodb.com,Produtividade & Ferramentas
+nlp.stanford.edu,Produtividade & Ferramentas
+drive.google.com,Produtividade & Ferramentas
+calendar.google.com,Produtividade & Ferramentas
+evernote.com,Produtividade & Ferramentas
+asana.com,Produtividade & Ferramentas
+todoist.com,Produtividade & Ferramentas
+basecamp.com,Produtividade & Ferramentas
+console.firebase.google.com,Produtividade & Ferramentas
+monday.com,Produtividade & Ferramentas
+clickup.com,Produtividade & Ferramentas
+gmail.com,Produtividade & Ferramentas
+figma.com,Produtividade & Ferramentas
+canva.com,Produtividade & Ferramentas
+adobe.com,Produtividade & Ferramentas
+stackoverflow.com,Produtividade & Ferramentas
+w3schools.com,Produtividade & Ferramentas
+geeksforgeeks.org,Produtividade & Ferramentas
+freecodecamp.org,Produtividade & Ferramentas
+codepen.io,Produtividade & Ferramentas
+jsfiddle.net,Produtividade & Ferramentas
+replit.com,Produtividade & Ferramentas
+zapier.com,Produtividade & Ferramentas
+ifttt.com,Produtividade & Ferramentas
+miro.com,Produtividade & Ferramentas
+mural.co,Produtividade & Ferramentas
+overleaf.com,Produtividade & Ferramentas
+grammarly.com,Produtividade & Ferramentas
+calendly.com,Produtividade & Ferramentas
+wetransfer.com,Produtividade & Ferramentas
+smallpdf.com,Produtividade & Ferramentas
+prezi.com,Produtividade & Ferramentas
+localhost,Produtividade & Ferramentas
+npr.org,Produtividade & Ferramentas
+time.com,Produtividade & Ferramentas
+pt.wikipedia.org,Produtividade & Ferramentas
+sesisenaispedu-my.sharepoint.com,Produtividade & Ferramentas
+accounts.firefox.com,Produtividade & Ferramentas
+monkeytype.com,Produtividade & Ferramentas
+expressjs.com,Produtividade & Ferramentas
+python.org,Produtividade & Ferramentas
+aws.amazon.com,Produtividade & Ferramentas
+alura.com.br,Produtividade & Ferramentas
+npmjs.com,Produtividade & Ferramentas
+scikit-learn.org,Produtividade & Ferramentas
+pandas.pydata.org,Produtividade & Ferramentas
+notion.com,Produtividade & Ferramentas
+workspace.google.com,Produtividade & Ferramentas
+rescuetime.com,Produtividade & Ferramentas
+pomodorotimer.online,Produtividade & Ferramentas
+
+# ===================== NoticiaISMO =====================
+g1.globo.com,Noticia
+uol.com.br,Noticia
+terra.com.br,Noticia
+estadao.com.br,Noticia
+folha.uol.com.br,Noticia
+cnn.com/news,Noticia
+edition.cnn.com,Noticia
+cnnbrasil.com.br,Noticia
+nytimes.com,Noticia
+washingtonpost.com,Noticia
+theguardian.com,Noticia
+reuters.com,Noticia
+dw.com,Noticia
+rtve.es,Noticia
+elpais.com,Noticia
+lemonde.fr,Noticia
+aljazeera.com,Noticia
+r7.com,Noticia
+msn.com,Noticia
+news.yahoo.com,Noticia
+forbes.com,Noticia
+bloomberg.com,Noticia
+wsj.com,Noticia
+huffpost.com,Noticia
+vox.com,Noticia
+buzzfeednews.com,Noticia
+apnews.com,Noticia
+theverge.com,Noticia
+wired.com,Noticia
+techcrunch.com,Noticia
+axios.com,Noticia
+politico.com,Noticia
+dailymotion.com,Noticia
+nsctotal.com.br,Noticia
+gamevicio.com,Noticia
+gameplayscassi.com.br,Noticia
+tecmundo.com.br,Noticia
+canaltech.com.br,Noticia
+olhardigital.com.br,Noticia
+techtudo.com.br,Noticia
+cio.com,Noticia
+techcrunch.com,Noticia
+thenextweb.com,Noticia
+gizbr.uol.com.br,Noticia
+itforum.com.br,Noticia
+infowester.com,Noticia
+tecnoblog.net,Noticia
+fifa.com,Noticia
+
+# ===================== LOJA Digital ===================== 
+
+pt.aliexpress.com,Loja Digital
+aliexpress.com,Loja Digital
+shopee.com.br,Loja Digital
+shopee.com,Loja Digital
+br.shein.com,Loja Digital
+shein.com,Loja Digital
+mercadolivre.com.br,Loja Digital
+mercadolivre.com,Loja Digital
+magazineluiza.com.br,Loja Digital
+amazon.com.br,Loja Digital
+amazon.com,Loja Digital
+americanas.com.br,Loja Digital
+cloude.com.br,Loja Digital
+marcusnmarcus.com.br,Loja Digital
+marcusnmarcus.com,Loja Digital
+riachuelo.com.br,Loja Digital
+zattini.com.br,Loja Digital
+br.privalia.com,Loja Digital
+lojaspompeia.com,Loja Digital
+hering.com.br,Loja Digital
+myft.com.br,Loja Digital
+zema.com,Loja Digital
+pernambucanas.com.br,Loja Digital
+lojastorra.com.br,Loja Digital
+lojasrenner.com.br,Loja Digital
+purocharmestore.com.br,Loja Digital
+toryburch.com.br,Loja Digital
+rihappy.com.br,Loja Digital
+toyshow.com.br,Loja Digital
+toymania.com.br,Loja Digital
+shop.mattel.com,Loja Digital
+estantevirtual.com.br,Loja Digital
+leitura.com.br,Loja Digital
+loja.universodoslivros.com.br,Loja Digital
+livrariadavila.com.br,Loja Digital
+terabyteshop.com.br,Loja Digital
+pichau.com.br,Loja Digital
+gigantec.com.br,Loja Digital
+gitechinformatica.com,Loja Digital
+patoloco.com.br,Loja Digital
+gkinfostore.com.br,Loja Digital
+shopinfo.com.br,Loja Digital
+gigantec.com.br,Loja Digital
+prudenpecas.com.br,Loja Digital
+prudenparts.com.br,Loja Digital
+store.steampowered.com,Loja Digital
+
+

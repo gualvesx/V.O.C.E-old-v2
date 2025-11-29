@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "V.O.C.E",
+  "version": "1.1",
+  "description": "Monitora o tempo de uso de sites e envia para análise. Icons by Icons8",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms",
+    "nativeMessaging",
+
+    "http://10.111.9.63:8081/*",
+    "http://localhost:8081/*",
+    "http://localhost:3000/*"
+  ],
+
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "monitor-tcc@meuprojeto.com"
+    }
+  },
+
+  "options_ui": {
+    "page": "html/options.html",
+    "open_in_tab": true
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png"
+  }
+}

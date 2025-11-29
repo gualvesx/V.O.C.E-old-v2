@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V.O.C.E | Termos de Uso</title>
+  <link rel="shortcut icon" href="#" type="image/png" />
+
+  <%- include('partials/header') %>
+
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 1rem;
+      height: 80px;
+    }
+
+    header .logo-header img {
+      height: 40px;
+    }
+
+    #btn-back {
+      background-color: #dc2626;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    #btn-back:hover {
+      opacity: 1;
+    }
+
+    .term-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .term-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #btn-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #dc2626;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s, transform 0.4s;
+      z-index: 1000;
+    }
+    #btn-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+
+  <header>
+    <div class="logo-header">
+      <a href="/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/SENAI_S%C3%A3o_Paulo_logo.png" alt="Logo SENAI" />
+      </a>
+    </div>
+    <button id="btn-back">Voltar</button>
+  </header>
+
+  <main class="flex-grow py-12 px-4">
+    <div class="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg border-t-4 border-red-700">
+      <h1 class="text-3xl font-bold mb-6">Termos de Uso</h1>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">1. Termos</h2>
+        <p>
+          Ao acessar o site <a href="/" class="text-red-700 hover:underline">V.O.C.E - (SENAI)</a>,
+          você concorda com estes termos de uso e legislação aplicável.
+        </p>
+      </section>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">2. Uso de Licença</h2>
+        <p>É concedida permissão para acessar, visualizar e atualizar os dados contidos neste projeto somente para fins educacionais.</p>
+        <p>Você <b>NÃO</b> tem permissão para:</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li>Vender os dados ou qualquer parte deles;</li>
+          <li>Alterar, editar, adaptar ou modificar os dados;</li>
+          <li>Tentar fazer engenharia reversa de qualquer software;</li>
+          <li>Distribuir versões alteradas, remixes ou derivados;</li>
+          <li>Usar os dados para fins comerciais ou lucrativos.</li>
+        </ol>
+      </section>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">3. Isenção de Responsabilidade</h2>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li>Os materiais são fornecidos “como estão”.</li>
+          <li>Não garantimos precisão, confiabilidade ou atualidade das informações.</li>
+        </ol>
+      </section>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">4. Limitações</h2>
+        <p>
+          Em nenhum caso o V.O.C.E será responsável por danos resultantes do uso
+          ou incapacidade de usar os materiais.
+        </p>
+      </section>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">5. Precisão dos Materiais</h2>
+        <p>
+          Os materiais podem conter erros técnicos, tipográficos ou fotográficos,
+          e podem ser alterados a qualquer momento.
+        </p>
+      </section>
+
+      <section class="term-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">6. Links</h2>
+        <p>
+          O V.O.C.E pode incluir links externos que não são controlados por nós.
+        </p>
+      </section>
+
+      <section class="term-section mb-8">
+        <h3 class="text-xl font-medium mb-2">Modificações</h3>
+        <p>
+          Estes termos podem ser revisados a qualquer momento, sem aviso prévio.
+        </p>
+      </section>
+
+      <section class="term-section mb-8">
+        <h3 class="text-xl font-medium mb-2">Lei Aplicável</h3>
+        <p>
+          Este acordo é regido pelas leis brasileiras e você concorda com sua jurisdição.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <button id="btn-to-top" aria-label="Voltar ao topo">↑</button>
+
+  <footer class="bg-red-700 text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <%= new Date().getFullYear(); %> SENAI – Todos os direitos reservados.</p>
+      <p>
+        <a href="/politicas-de-privacidade" class="hover:underline">Política de Privacidade</a> |
+        <a href="/contato" class="hover:underline">Contato</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.term-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(sec => observer.observe(sec));
+
+      const backButton = document.getElementById('btn-back');
+      backButton.addEventListener('click', () => {
+        window.location.href = '/cadastro';
+      });
+
+      const toTopButton = document.getElementById('btn-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) toTopButton.classList.add('show');
+        else toTopButton.classList.remove('show');
+      });
+      toTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

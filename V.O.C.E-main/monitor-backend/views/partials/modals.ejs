@@ -1,0 +1,131 @@
+<div id="editClassModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="max-w-3xl bg-white p-6 rounded-lg shadow-xl">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Editar Nome da Turma</h3>
+        <div class="mt-4">
+            <label for="editClassNameInput" class="block text-sm font-medium text-gray-700 mb-2">Novo nome da turma:</label>
+            <input type="text" id="editClassNameInput" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+        </div>
+        <div class="mt-6 flex justify-end gap-3">
+            <button onclick="closeModals()" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500">Cancelar</button>
+            <button id="saveClassChangesBtn" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-red-700 text-white hover:bg-red-800 focus:ring-red-500">Salvar</button>
+        </div>
+    </div>
+</div>
+
+<div id="editStudentModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="max-w-3xl bg-white p-6 rounded-lg shadow-xl">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Editar Dados do Aluno</h3>
+        <div class="space-y-4 mt-4">
+            <div>
+                <label for="editStudentNameInput" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo:</label>
+                <input type="text" id="editStudentNameInput" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+            </div>
+            <div>
+                <label for="editStudentCpfInput" class="block text-sm font-medium text-gray-700 mb-1">CPF (Opcional):</label>
+                <input type="text" id="editStudentCpfInput" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+            </div>
+            <div>
+                <label for="editStudentPcIdInput" class="block text-sm font-medium text-gray-700 mb-1">ID do PC (Opcional):</label>
+                <input type="text" id="editStudentPcIdInput" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+            </div>
+        </div>
+        <div class="mt-6 flex justify-end gap-3">
+            <button onclick="closeStudentModal()" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500">Cancelar</button>
+            <button id="saveStudentChangesBtn" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-red-700 text-white hover:bg-red-800 focus:ring-red-500">Salvar Alterações</button>
+        </div>
+    </div>
+</div>
+
+<div id="alertLogsModal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="modal-content max-w-3xl bg-white p-6 rounded-lg shadow-xl">
+        <h3 id="alertLogsTitle" class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Logs de Alerta</h3>
+        <div id="alertLogsContainer" class="max-h-[60vh] overflow-y-auto">
+        </div>
+        <div class="mt-6 flex justify-end">
+            <button onclick="closeAlertLogsModal()" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500">Fechar</button>
+        </div>
+    </div>
+</div>
+
+<div id="tutorialModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50">
+    <div class="relative mx-auto p-8 border w-full max-w-xl shadow-2xl rounded-lg bg-white transform transition-all duration-300 scale-100">
+        
+        <div class="flex justify-between items-center border-b pb-3 mb-6">
+            <h3 class="text-2xl font-bold text-red-700">Tour Guiado: Usando o Dashboard (<span id="currentStep">1</span> de 3)</h3>
+            <button onclick="closeTutorialModal()" class="text-gray-400 hover:text-gray-600 text-3xl leading-none font-light" title="Fechar Tour">&times;</button>
+        </div>
+        
+        <div id="tourContent">
+            
+            <div id="step-1" class="tour-step space-y-4">
+                <h4 class="font-semibold text-xl text-gray-900 mb-2 border-l-4 border-red-500 pl-4">Passo 1: Filtros, Pesquisa e Gráficos</h4>
+                <p>Use a seção de <strong>Filtros de Dados e Visualização</strong> para refinar o que você vê:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                    <li>Filtre por <strong>Turma</strong> ou <strong>Categoria</strong> (Sites Acessados).</li>
+                    <li>Use o campo <strong>Pesquisar</strong> para buscar logs e resumos por Nome do Aluno, ID Bruto ou a URL do site.</li>
+                    <li>Os gráficos abaixo dos filtros (Top 10 Sites) são atualizados em tempo real com base na sua seleção!</li>
+                </ul>
+            </div>
+
+            <div id="step-2" class="tour-step hidden space-y-4">
+                <h4 class="font-semibold text-xl text-gray-900 mb-2 border-l-4 border-red-500 pl-4">Passo 2: Filtrando por Aluno e Logs</h4>
+                <p>A tabela de <strong>Resumo de Atividade</strong> é seu ponto central para detalhes:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                    <li><strong>Clique no Nome do Aluno:</strong> Isso irá filtrar o gráfico e a tabela de logs (abaixo) para mostrar <strong>apenas</strong> a atividade daquele aluno.</li>
+                    <li><strong>Alerta de IA (🔹) e Acesso Indevido (⚠️):</strong> Fique atento a estes indicadores na tabela.</li>
+                </ul>
+                <p class="text-sm font-bold text-red-600">Prossiga para o próximo passo para entender os alertas!</p>
+            </div>
+
+            <div id="step-3" class="tour-step hidden space-y-4">
+                <h4 class="font-semibold text-xl text-gray-900 mb-2 border-l-4 border-red-500 pl-4">Passo 3: Visualizando Logs de Alerta</h4>
+                <p>Quando um alerta (⚠️ ou 🔹) aparece, você pode investigar a fundo:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                    <li><strong>Ação:</strong> <strong>Clique no ícone de alerta</strong> (⚠️ ou 🔹) para abrir um painel dedicado (o <strong>Logs de Alerta</strong>) que exibe <strong>somente</strong> os logs que causaram o aviso.</li>
+                    <li><strong>Exemplo do painel:</strong> O painel "Logs de Alerta (Acesso Indevido) para PC22" (visto na imagem) é aberto ao clicar no ⚠️ daquele PC/Aluno.</li>
+                    <li>Use o botão <strong>Fechar</strong> no painel de Logs de Alerta para retornar ao dashboard.</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="mt-8 flex justify-between gap-4 pt-4 border-t">
+            <button id="prevStepBtn" onclick="prevStep()" class="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 hidden">Voltar</button>
+            <button id="nextStepBtn" onclick="nextStep()" class="px-6 py-2 bg-red-700 text-white font-semibold rounded-md hover:bg-red-800 ml-auto">Próximo</button>
+            <button id="finishTourBtn" onclick="closeTutorialModal()" class="px-6 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 hidden ml-auto">Finalizar Tour</button>
+        </div>
+    </div>
+</div>
+
+<div id="shareClassModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="modal-content max-w-2xl bg-gray-50 p-6 rounded-lg shadow-xl">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-3">Partilhar Turma: <span id="shareClassName" class="text-red-700"></span></h3>
+        
+        <div id="share-modal-content-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+            <div id="add-professor-container" class="space-y-4">
+                <h4 class="text-lg font-semibold text-gray-700 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                    Adicionar Professor
+                </h4>
+                <div class="flex gap-2">
+                    <select id="professorsToShareList" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 outline-none flex-1">
+                        <option value="">Selecione um professor...</option>
+                    </select>
+                    <button id="addProfessorToClassBtn" class="px-5 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors">Adicionar</button>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-gray-700 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Membros Atuais
+                </h4>
+                <ul id="currentClassMembers" class="space-y-2 max-h-48 overflow-y-auto bg-white p-3 rounded-md border">
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-8 flex justify-end">
+            <button onclick="closeShareModal()" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm bg-gray-600 text-white hover:bg-gray-700">Fechar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Monitor de Atividade para Power BI",
+    "version": "1.0",
+    "description": "Monitora o tempo de uso de sites e envia para análise.",
+    "permissions": [
+      "tabs",          
+      "activeTab",     
+      "storage",       
+      "alarms",
+      "identity",         
+      "identity.email",
+      "nativeMessaging"      
+    ],
+    "host_permissions": [
+      "http://localhost:3000/*" 
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }

@@ -1,0 +1,105 @@
+/* ================================================================
+    SENAI V.O.C.E - Estilos Globais Mínimos
+================================================================ */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #F3F4F6; /* Cor de fundo padrão (cinza claro) */
+  }
+  
+  /* Estilos para os Modais de Edição */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  
+  /* ================================================================
+      Estilos de Formulário (Movidos dos arquivos .ejs)
+  ================================================================ */
+  .form-input { 
+      width: 100%; 
+      padding: 0.5rem 1rem; 
+      border: 1px solid #D1D5DB; 
+      border-radius: 0.375rem; 
+      transition: box-shadow 0.2s; 
+  }
+  
+  .form-input:focus { 
+      outline: none; 
+      box-shadow: 0 0 0 2px #FCA5A5; 
+      border-color: #EF4444; 
+  }
+  
+  /* Botão de submit para telas de Login e Cadastro (w-full) */
+  .btn-submit {
+      padding: 0.75rem 1rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      color: white;
+      background-color: #B91C1C;
+      transition: background-color 0.2s;
+  }
+  
+  .btn-submit:hover { 
+      background-color: #991B1B; 
+  }
+  
+  /* Variação do botão de submit para a página de perfil (inline) */
+  .btn-submit-inline {
+      display: inline-block;
+      padding: 0.625rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      color: white;
+      background-color: #B91C1C;
+      transition: background-color 0.2s;
+  }
+  
+  .btn-submit-inline:hover {
+      background-color: #991B1B;
+  }
+  
+  
+  /* ================================================================
+      Estilos do Dashboard (Movidos do arquivo dashboard.ejs)
+  ================================================================ */
+  .pagination-btn {
+      padding: 0.25rem 0.75rem;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.375rem;
+      background-color: white;
+      font-size: 0.875rem;
+      transition: background-color 0.2s;
+      cursor: pointer;
+  }
+  
+  .pagination-btn:hover:not(:disabled) {
+      background-color: #F3F4F6;
+  }

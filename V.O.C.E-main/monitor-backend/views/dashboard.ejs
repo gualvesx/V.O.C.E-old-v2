@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="shortcut icon" href="#" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        .pagination-btn {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.375rem;
+            background-color: white;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        .pagination-btn:hover:not(:disabled) {
+            background-color: #F3F4F6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    
+    <header class="bg-white shadow-md border-b-2 border-gray-100 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/SENAI_S%C3%A3o_Paulo_logo.png" alt="Logo SENAI" class="h-10"></a>
+            <div class="flex items-center space-x-6">
+                <a href="/gerenciamento" class="text-gray-600 hover:text-red-700 font-semibold transition-colors duration-200 text-sm uppercase tracking-wider">
+                    Gerenciamento
+                </a>
+                <a href="/perfil" class="text-gray-600 hover:text-red-700 font-semibold transition-colors duration-200 text-sm uppercase tracking-wider">
+                    Meu Perfil
+                </a>
+                <span class="text-gray-300">|</span>
+                <span class="text-gray-700 hidden sm:inline">Bem-vindo, <strong class="text-red-700"><%= professorName %></strong>!</span>
+                <a href="/logout" class="inline-block px-4 py-2 rounded-md font-semibold text-center uppercase tracking-wider text-xs transition-transform duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-red-700 text-white hover:bg-red-800 focus:ring-red-500">
+                    Sair
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <div class="space-y-8">
+
+            <section class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-700 mb-8">
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Exportar Relatório Diário</h2>
+                <p class="text-gray-700 mb-4">
+                    Selecione a data para gerar um relatório em PDF com os dados de atividade dos alunos. Os relatórios ficam disponíveis por até 3 dias.
+                </p>
+                <div class="flex items-end gap-4">
+                    <div>
+                        <label for="reportDate" class="block text-sm font-medium text-gray-700">Data do Relatório</label>
+                        <input type="date" id="reportDate" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+                    </div>
+                    <div>
+                        <button id="downloadPdfBtn" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm bg-red-700 text-white hover:bg-red-800">
+                            Baixar Relatório
+                        </button>
+                    </div>
+                </div>
+                <div id="reportError" class="text-red-600 text-sm mt-2"></div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-700">
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Filtros de Dados e Visualização</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                    <div>
+                        <label for="classSelect" class="block text-sm font-medium text-gray-700">Filtrar por Turma</label>
+                        <select id="classSelect" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+                            <option value="null">Visão Geral (Todas as Turmas)</option>
+                            <% if (classes.length > 0) { %>
+                                <% classes.forEach(cls => { %>
+                                    <option value="<%= cls.id %>"><%= cls.name %></option>
+                                <% }) %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="search-input" class="block text-sm font-medium text-gray-700">Pesquisar por Aluno/ID/URL</label>
+                        <input type="text" id="search-input" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+                    </div>
+                    <div>
+                        <label for="category-select" class="block text-sm font-medium text-gray-700">Categoria</label>
+                        <select id="category-select" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-red-600 outline-none">
+                            <option value="">Todas</option>
+                            <% categories.forEach(cat => { %>
+                                <option value="<%= cat %>"><%= cat %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center h-full mt-1">
+                            <input id="show-alerts-checkbox" type="checkbox" class="h-4 w-4 text-red-600 border-gray-300 rounded focus:ring-red-500">
+                            <label for="show-alerts-checkbox" class="ml-2 block text-sm text-gray-900">Apenas Alertas</label>
+                        </div>
+                        <button id="apply-filters-btn" class="inline-block px-6 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm bg-red-700 text-white hover:bg-red-800">Aplicar</button>
+                        <button id="clear-filters-btn" class="inline-block px-4 py-2.5 rounded-md font-semibold text-center uppercase tracking-wider text-sm bg-gray-600 text-white hover:bg-gray-700">Limpar</button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="dashboard-content" class="space-y-8">
+                <section class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold text-gray-900">Filtros de Dados e Visualização</h2>
+                        <button 
+                        onclick="openTutorialModal()" 
+                        class="w-8 h-8 flex items-center justify-center rounded-full text-white bg-red-600 hover:bg-red-700 font-extrabold text-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2" 
+                        title="Ver Tutorial de Uso"
+                    >
+                        ?
+                    </button>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Resumo de Atividade</h2>
+                    <div class="overflow-x-auto rounded-lg shadow border border-gray-200">
+                        <table class="min-w-full">
+                           <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome do Aluno</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID Bruto</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tempo Total (min)</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registros</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Última Atividade</th></tr></thead>
+                           <tbody id="usersTableBody" class="bg-white divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                        <h2 class="text-xl font-bold text-gray-900">Análise Visual (Top 10 Sites)</h2>
+                        <div class="flex gap-2">
+                            <button class="chart-btn active bg-red-700 text-white px-4 py-1 rounded-md text-sm" data-type="bar">Barras</button>
+                            <button class="chart-btn bg-gray-200 text-gray-700 px-4 py-1 rounded-md text-sm" data-type="pie">Pizza</button>
+                            <button class="chart-btn bg-gray-200 text-gray-700 px-4 py-1 rounded-md text-sm" data-type="doughnut">Rosca</button>
+                            <button class="chart-btn bg-gray-200 text-gray-700 px-4 py-1 rounded-md text-sm" data-type="line">Linha</button>
+                            <button class="chart-btn bg-gray-200 text-gray-700 px-4 py-1 rounded-md text-sm" data-type="polarArea">Área Polar</button>
+                        </div>
+                    </div>
+                    <div class="relative h-80 w-full">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </section>
+                
+                <section class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-700">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Logs de Atividade (<span id="logs-count">0</span>)</h2>
+                    <div class="overflow-x-auto rounded-lg shadow border border-gray-200 max-h-[500px] overflow-y-auto">
+                        <table class="min-w-full">
+                           <thead class="bg-gray-50 sticky top-0"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aluno</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">URL</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duração (s)</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoria</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data e Hora</th></tr></thead>
+                           <tbody id="logsTableBody" class="bg-white divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                    <div id="logs-pagination-container"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-red-800 text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-sm">© <%= new Date().getFullYear() %> SENAI -  Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <%- include('partials/modals') %>
+    
+
+    <script src="/js/script.js"></script>
+
+    <div id="categoryEditModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 overflow-y-auto h-full w-full flex items-center justify-center z-50">
+        <div class="relative mx-auto p-6 border w-full max-w-md shadow-lg rounded-md bg-white">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <h3 class="text-lg font-medium text-gray-900">Alterar Categoria para:</h3>
+                <button id="closeCategoryModalBtn" class="text-gray-400 hover:text-gray-600 modal-close-btn">&times;</button>
+            </div>
+            <p id="modalUrlDisplay" class="text-sm font-mono text-gray-700 mb-4 break-all"></p>
+    
+            <div id="modalCategoryList" class="space-y-2 max-h-60 overflow-y-auto mb-6 pr-2">
+                </div>
+    
+            <div class="flex justify-end gap-4 pt-4 border-t">
+                <button id="cancelCategoryChangeBtn" type="button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 modal-close-btn">Cancelar</button>
+                <button id="confirmCategoryChangeBtn" type="button" class="px-4 py-2 bg-red-700 text-white rounded hover:bg-red-800">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</body>

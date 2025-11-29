@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V.O.C.E | Política de Privacidade</title>
+  <link rel="shortcut icon" href="#" type="image/png" />
+  <%- include('partials/header') %>
+  <style>
+    /* Animação para seções da política */
+    .policy-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .policy-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Botão “Voltar” no header (lado direito) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 1rem;
+      height: 80px;
+    }
+    #btn-back {
+      background-color: #dc2626;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    #btn-back:hover {
+      opacity: 1;
+    }
+
+    /* Botão ir para o topo */
+    #btn-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #dc2626;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s, transform 0.4s;
+      z-index: 1000;
+    }
+    #btn-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+
+  <header>
+    <div class="logo-header">
+      <a href="/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/SENAI_S%C3%A3o_Paulo_logo.png"
+             alt="Logo SENAI" class="h-10" />
+      </a>
+    </div>
+    <button id="btn-back">Voltar</button>
+  </header>
+
+  <main class="flex-grow py-12 px-4">
+    <div class="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg border-t-4 border-red-700">
+      <h1 class="text-3xl font-bold mb-6">Política de Privacidade - V.O.C.E</h1>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">1. Introdução</h2>
+        <p>Esta Política de Privacidade descreve como o <strong>V.O.C.E</strong> coleta, utiliza, armazena e protege os dados pessoais dos estudantes. Nosso compromisso é garantir que todas as informações tratadas sejam protegidas e utilizadas exclusivamente para fins legítimos e educacionais, respeitando a legislação aplicável.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">2. Coleta de Dados</h2>
+        <p>Coletamos dados pessoais somente quando necessário para o funcionamento adequado do sistema. Entre os dados que podem ser coletados estão:</p>
+        <ul class="list-disc list-inside ml-4 space-y-2">
+          <li>Informações enviadas automaticamente pelos dispositivos cadastrados (como URLs acessadas, duração de atividade e CPF).</li>
+          <li>Dados necessários para autenticação e uso da plataforma.</li>
+        </ul>
+        <p>Os dados são coletados por meios legais e sempre com conhecimento e autorização dos responsáveis quando aplicável.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">3. Finalidade do Tratamento de Dados</h2>
+        <p>As informações coletadas são utilizadas para:</p>
+        <ul class="list-disc list-inside ml-4 space-y-2">
+          <li>Monitorar atividades educacionais de forma segura.</li>
+          <li>Gerar relatórios e estatísticas de uso.</li>
+          <li>Identificar padrões de navegação relacionados ao ambiente escolar</li>
+          <li>Aperfeiçoar os serviços oferecidos pelo sistema.</li>
+        </ul>
+        <p>Nenhum dado coletado é utilizado para fins comerciais ou publicitários.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">4. Armazenamento e Proteção</h2>
+        <p>Os dados são armazenados pelo tempo necessário para cumprimento das finalidades acima. Medidas técnicas e organizacionais são adotadas para proteger as informações contra perda, acesso não autorizado, modificação ou divulgação indevida.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">5. Compartilhamento</h2>
+        <p>Os dados não são compartilhados com terceiros, exceto:</p>
+        <ul class="list-disc list-inside ml-4 space-y-2">
+          <li>Quando exigido por lei.</li>
+          <li>Quando necessário para integridade da operação do sistema (como serviços de hospedagem ou infraestrutura, sempre com proteção contratual).</li>
+        </ul>
+        <p>Não vendemos, trocamos ou divulgamos informações pessoais para fins comerciais.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">6. Cookies e Tecnologias Relacionadas</h2>
+        <p>O V.O.C.E pode utilizar cookies ou tecnologias similares para melhorar a experiência do usuário na plataforma. Esses dados não são utilizados para rastreamento externo nem compartilhados com terceiros.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">7. Links Externos</h2>
+        <p>O site pode conter links para páginas externas. Não somos responsáveis pelas políticas de privacidade ou práticas desses sites de terceiros.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">8. Direitos do Usuário</h2>
+        <p>O estudante (ou seu responsável) tem o direito de:</p>
+        <ul class="list-disc list-inside ml-4 space-y-2">
+          <li>Solicitar informações sobre os dados coletados.</li>
+          <li>Pedir correção de informações incorretas.</li>
+          <li>Solicitar a exclusão de dados quando legalmente aplicável.</li>
+        </ul>
+        <p>Essas solicitações podem ser feitas entrando em contato com a equipe responsável pelo sistema.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">9. Uso Contínuo</h2>
+        <p>O uso do site e da plataforma implica concordância com esta Política de Privacidade. Recomendamos revisar este documento periodicamente, pois ele pode ser atualizado para refletir melhorias ou requisitos legais.</p>
+      </section>
+
+      <section class="policy-section mb-8">
+        <h2 class="text-2xl font-semibold mb-2">10. Vigência</h2>
+        <p>Esta política é efetiva a partir de 27 de novembro de 2025.</p>
+      </section>
+    </div>
+  </main>
+
+  <button id="btn-to-top" aria-label="Voltar ao topo">↑</button>
+
+  <footer class="bg-red-700 text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <%= new Date().getFullYear() %> SENAI – Todos os direitos reservados.</p>
+      <p><a href="/termos" class="hover:underline">Termos de Uso</a> | <a href="/contato" class="hover:underline">Contato</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animação nas seções
+      const sections = document.querySelectorAll('.policy-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(sec => observer.observe(sec));
+
+      // Botão voltar
+      const backButton = document.getElementById('btn-back');
+      if (backButton) {
+        backButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.history.length > 1) {
+            window.location.href = '/cadastro';
+          } else {
+            window.location.href = '/';
+          }
+        });
+      }
+
+      // Botão ir para o topo
+      const toTopButton = document.getElementById('btn-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          toTopButton.classList.add('show');
+        } else {
+          toTopButton.classList.remove('show');
+        }
+      });
+      toTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
